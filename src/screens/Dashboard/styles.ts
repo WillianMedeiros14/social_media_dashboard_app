@@ -6,13 +6,13 @@ export const Container = styled.View `
 `;
 
 export const ScrollView = styled.ScrollView `
-    padding-top: 42px;
     padding-bottom: 42px;
 `;
 
 export const Header = styled.View `
     width: 100%;
     background-color: ${({theme}) => theme.colors.backgroundSecondary};
+    padding-top: 42px;
     padding-left: 24px;
     padding-right: 24px;
     border-bottom-left-radius: 25px;
@@ -52,3 +52,12 @@ export const TextDarkMode = styled(TextTotalFollowers) `
     color: ${({theme}) => theme.colors.textPrimary};
     margin-bottom: 11px;
 `;
+
+
+///Main
+
+export const Main = styled.View `
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+`

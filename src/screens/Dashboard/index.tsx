@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import { IconFacebook, Iconinstagram, IconTwitter, IconYoutube } from "../../assets/icons";
+import { CardSectionPrimary } from "../../components";
 
 import * as S from './styles';
 
@@ -33,7 +35,26 @@ export function Dashboard(){
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
                     </S.SectionScondary>
                 </S.Header>
+                
+                <S.Main>
+                    {
+                        dataPrimaryCard.map((item) => {
+                            return(
+                                <CardSectionPrimary
+                                    key={item.id}
+                                    userName={item.userName}
+                                    Icon={item.icon}
+                                    qtdFollowers={item.qtdFollowers}
+                                    qtdFollowersToday={item.qtdFollowersToday}
+                                    type={item.type}
+                                    decreaseViews={item.decreaseViews}
+                                />
+                            )
+                        })
+                    }
+                </S.Main>
             </S.ScrollView>
+
         </S.Container>
     );
 }
