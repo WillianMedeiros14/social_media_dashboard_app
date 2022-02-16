@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { useTheme } from "styled-components";
 
 import { IconFacebook, Iconinstagram, IconTwitter, IconYoutube } from "../../assets/icons";
-import { CardSectionPrimary, CardOverviewToday } from "../../components";
+import { CardSectionPrimary, CardOverviewToday, Toogle } from "../../components";
+import { useThemeAplication } from "../../hooks/theme";
 
 import * as S from './styles';
 
 export function Dashboard(){
     const theme = useTheme();
+    const { toggleTheme } = useThemeAplication();
+    
+    function handleTheme(){
+        toggleTheme();
+    }
+
     const [dataPrimaryCard, setDataPrimaryCard] = useState([
         {id: 1, userName: '@nathanf', icon: IconFacebook, qtdFollowers: '1987', qtdFollowersToday: 12, type: 'facebook', decreaseViews: false},
         {id: 2, userName: '@nathanf', icon: IconTwitter, qtdFollowers: '1044', qtdFollowersToday: 99, type: 'twiter', decreaseViews: false},
@@ -35,7 +42,9 @@ export function Dashboard(){
                     </S.SectionPrimary>
                     <S.SectionScondary>
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
-                        
+                        <Toogle 
+                            onPress={handleTheme}
+                        />
                     </S.SectionScondary>
                 </S.Header>
 
@@ -74,7 +83,6 @@ export function Dashboard(){
                     }
                 </S.Main>
             </S.ScrollView>
-
         </S.Container>
     );
 }

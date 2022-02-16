@@ -63,7 +63,7 @@ export const Main = styled.View `
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 42px;
-    margin-top: -60px;
+    /* margin-top: -60px; */
 `;
 
 export const TitleSectionOverViewToday = styled.Text `
