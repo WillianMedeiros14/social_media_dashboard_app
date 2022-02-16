@@ -23,34 +23,36 @@ export function CardSectionPrimary({
 }: Props){
     const theme = useTheme();
     return (
-        <S.Container type={type}>
-            {
-                type === 'instagran' &&
-                <S.BorderGradientInstagran 
-                    start={{x:0,y:1}}
-                    end={{x:1,y:0}}
-                    colors={[theme.colors.linearInstagranPrimary, theme.colors.linearInstagranSecondary]}
-                />
-            }
-            <S.ContainerUserName>
-                <Icon />
-                <S.UserName>{userName}</S.UserName>
-            </S.ContainerUserName>
-
-            <S.ContainerCenter>
-                <S.NumberFollowers>{qtdFollowers}</S.NumberFollowers>
-                <S.TextFollowers>FOLLOWERS</S.TextFollowers>
-            </S.ContainerCenter>
-
-            <S.ContainerDay>
+        <S.Container>
+            <S.ContainerButton type={type}>
                 {
-                    decreaseViews ? 
-                    <IconDown />
-                    :
-                    <IconUp />
+                    type === 'instagran' &&
+                    <S.BorderGradientInstagran 
+                        start={{x:0,y:1}}
+                        end={{x:1,y:0}}
+                        colors={[theme.colors.linearInstagranPrimary, theme.colors.linearInstagranSecondary]}
+                    />
                 }
-                <S.TextToday decreaseViews={decreaseViews}>{qtdFollowersToday} Today</S.TextToday>
-            </S.ContainerDay>
+                <S.ContainerUserName>
+                    <Icon />
+                    <S.UserName>{userName}</S.UserName>
+                </S.ContainerUserName>
+
+                <S.ContainerCenter>
+                    <S.NumberFollowers>{qtdFollowers}</S.NumberFollowers>
+                    <S.TextFollowers>FOLLOWERS</S.TextFollowers>
+                </S.ContainerCenter>
+
+                <S.ContainerDay>
+                    {
+                        decreaseViews ? 
+                        <IconDown />
+                        :
+                        <IconUp />
+                    }
+                    <S.TextToday decreaseViews={decreaseViews}>{qtdFollowersToday} Today</S.TextToday>
+                </S.ContainerDay>
+            </S.ContainerButton>
         </S.Container>
     );
 }

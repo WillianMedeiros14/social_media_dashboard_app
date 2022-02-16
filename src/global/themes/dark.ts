@@ -15,6 +15,8 @@ export default {
         linearInstagranSecondary: '#df4996',
 
         toggle: '#aeb3cb',
+        togleGradientPrimary: '#378fe6',
+        togleGradientSecondary: '#3eda82'
     },
     
     fonts: {

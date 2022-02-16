@@ -1,16 +1,15 @@
 import styled from "styled-components/native";
+import { RectButton } from "react-native-gesture-handler";
 
 interface Props {
     decreaseViews: boolean;
 }
 
-export const Container = styled.View`
+export const Container = styled(RectButton)`
     width: 100%;
     height: 125px;
     background-color: ${({theme}) => theme.colors.cardBackground};
     border-radius: 5px;
-
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -18,23 +17,15 @@ export const Container = styled.View`
     margin-top: 16px;
 `;
 
-
 export const ContainerSection= styled.View `
     width: 100%;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
 `;
     
-export const Icon = styled.Image `
-    width: 21px;
-    height: 21px;
-`;
-
 export const Title = styled.Text `
     color: ${({theme}) => theme.colors.textPrimary};
 `;
-
 
 export const NumberFollowers = styled.Text `
     color: ${({theme}) => theme.colors.textSecondary};
@@ -42,20 +33,11 @@ export const NumberFollowers = styled.Text `
     font-weight: 700;
 `;
 
-
 export const ContainerSectionSecondary= styled(ContainerSection) `
     align-items: flex-end;
 `;
-   
-
-export const IconUp = styled.Image `
-    width: 7px;
-    height: 5px;
-`;
-
 
 export const ContainerViewPercent= styled.View `
-    display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 3px;

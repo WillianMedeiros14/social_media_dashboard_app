@@ -1,4 +1,6 @@
+import { RectButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const Container = styled.View `
     flex: 1;
@@ -34,7 +36,6 @@ export const TitlePage = styled.Text `
 `;
 
 export const SectionScondary= styled.View `
-    width: 100%;
     border-top-width: 1px;
     border-color: rgba(99, 104, 126, 0.5);
     padding-top: 20px;
@@ -72,3 +73,6 @@ export const TitleSectionOverViewToday = styled.Text `
     margin-top: 32px;
     margin-bottom: 20px;
 `;
+
+//Toogle
+

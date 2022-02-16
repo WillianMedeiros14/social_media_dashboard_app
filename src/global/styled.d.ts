@@ -20,6 +20,8 @@ declare module 'styled-components' {
             linearInstagranSecondary: string;
 
             toggle: string;
+            togleGradientPrimary: string;
+            togleGradientSecondary: string;
         },
 
         fonts: {

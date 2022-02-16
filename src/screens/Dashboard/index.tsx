@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "styled-components";
 
 import { IconFacebook, Iconinstagram, IconTwitter, IconYoutube } from "../../assets/icons";
 import { CardSectionPrimary, CardOverviewToday } from "../../components";
@@ -6,6 +7,7 @@ import { CardSectionPrimary, CardOverviewToday } from "../../components";
 import * as S from './styles';
 
 export function Dashboard(){
+    const theme = useTheme();
     const [dataPrimaryCard, setDataPrimaryCard] = useState([
         {id: 1, userName: '@nathanf', icon: IconFacebook, qtdFollowers: '1987', qtdFollowersToday: 12, type: 'facebook', decreaseViews: false},
         {id: 2, userName: '@nathanf', icon: IconTwitter, qtdFollowers: '1044', qtdFollowersToday: 99, type: 'twiter', decreaseViews: false},
@@ -33,6 +35,7 @@ export function Dashboard(){
                     </S.SectionPrimary>
                     <S.SectionScondary>
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
+                        
                     </S.SectionScondary>
                 </S.Header>
 
@@ -59,6 +62,7 @@ export function Dashboard(){
                         dataOverviewToday.map((item) => {
                             return(
                                 <CardOverviewToday
+                                    key={item.id}
                                     title={item.title}
                                     Icon={item.icon}
                                     qtdFollowers={item.qtdFollowers}
