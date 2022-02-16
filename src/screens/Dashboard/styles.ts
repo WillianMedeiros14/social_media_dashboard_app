@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View `
     flex: 1;
     background-color: ${({theme}) => theme.colors.background};
+    
 `;
 
 export const ScrollView = styled.ScrollView `
@@ -11,6 +12,7 @@ export const ScrollView = styled.ScrollView `
 
 export const Header = styled.View `
     width: 100%;
+    height: 320px;
     background-color: ${({theme}) => theme.colors.backgroundSecondary};
     padding-top: 42px;
     padding-left: 24px;
@@ -21,7 +23,7 @@ export const Header = styled.View `
 
 export const SectionPrimary = styled.View `
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 11px;
 `;
 
 
@@ -29,7 +31,6 @@ export const TitlePage = styled.Text `
     font-size: 30px;
     font-family: ${({theme}) => theme.fonts.bold};
     color: ${({theme}) => theme.colors.textSecondary};
-   
 `;
 
 export const SectionScondary= styled.View `
@@ -60,4 +61,14 @@ export const Main = styled.View `
     width: 100%;
     padding-left: 24px;
     padding-right: 24px;
-`
+    padding-bottom: 42px;
+    margin-top: -60px;
+`;
+
+export const TitleSectionOverViewToday = styled.Text `
+    font-size: 25px;
+    font-family: ${({theme}) => theme.fonts.bold};
+    color: ${({theme}) => theme.colors.textSecondary};
+    margin-top: 32px;
+    margin-bottom: 20px;
+`;

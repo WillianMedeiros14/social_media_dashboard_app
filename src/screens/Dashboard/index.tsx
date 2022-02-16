@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { IconFacebook, Iconinstagram, IconTwitter, IconYoutube } from "../../assets/icons";
-import { CardSectionPrimary } from "../../components";
+import { CardSectionPrimary, CardOverviewToday } from "../../components";
 
 import * as S from './styles';
 
@@ -35,7 +35,7 @@ export function Dashboard(){
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
                     </S.SectionScondary>
                 </S.Header>
-                
+
                 <S.Main>
                     {
                         dataPrimaryCard.map((item) => {
@@ -47,6 +47,22 @@ export function Dashboard(){
                                     qtdFollowers={item.qtdFollowers}
                                     qtdFollowersToday={item.qtdFollowersToday}
                                     type={item.type}
+                                    decreaseViews={item.decreaseViews}
+                                />
+                            )
+                        })
+                    }
+
+                    <S.TitleSectionOverViewToday>OverView - Today</S.TitleSectionOverViewToday>
+
+                    {
+                        dataOverviewToday.map((item) => {
+                            return(
+                                <CardOverviewToday
+                                    title={item.title}
+                                    Icon={item.icon}
+                                    qtdFollowers={item.qtdFollowers}
+                                    qtdFollowersPercent={item.qtdFollowersPercent}
                                     decreaseViews={item.decreaseViews}
                                 />
                             )
