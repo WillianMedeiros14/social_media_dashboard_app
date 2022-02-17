@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E202A"
-      }
+      },
+      "package": "com.willianmedeiros.social_media_dashboard_app"
     },
     "web": {
       "favicon": "./assets/favicon.png"

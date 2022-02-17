@@ -13,7 +13,7 @@ Aplicação construita como requisito de teste técinico, para um proceso de sel
 
 ## 🚀 Informações 
  - Está aplicação foi feita em dois ambientes, neste reporitório está presente a aplicação feita com React Native;
- - Neste link ao lado ser baixado o apk do aplicativo: **[Apk do aplicativo](https://github.com/WillianMedeiros14/social_media_deshboard)**.
+ - Neste link ao lado pode ser baixado o apk do aplicativo: **[Apk do aplicativo](https://drive.google.com/drive/folders/1jPCQe6KZvL2OcXcPKQG7S4SdL7u2cUeo?usp=sharing)**.
  - No link a seguir pode ser consultado a aplicação criada em ReactJs: **[Link da aplicação em React Js](https://github.com/WillianMedeiros14/social_media_deshboard)**.
  
 <br>
