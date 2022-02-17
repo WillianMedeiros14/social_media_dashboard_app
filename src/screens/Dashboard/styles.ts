@@ -15,12 +15,13 @@ export const ScrollView = styled.ScrollView `
 export const Header = styled.View `
     width: 100%;
     height: 320px;
-    background-color: ${({theme}) => theme.colors.backgroundSecondary};
+    background-color: ${({theme}) => theme.colors.cardBackground};
     padding-top: 42px;
     padding-left: 24px;
     padding-right: 24px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    /* background-color: #ff0; */
 `;
 
 export const SectionPrimary = styled.View `
@@ -39,6 +40,8 @@ export const SectionScondary= styled.View `
     border-top-width: 1px;
     border-color: rgba(99, 104, 126, 0.5);
     padding-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export const TextTotalFollowers = styled.Text `
@@ -63,7 +66,7 @@ export const Main = styled.View `
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 42px;
-    /* margin-top: -60px; */
+    margin-top: -60px;
 `;
 
 export const TitleSectionOverViewToday = styled.Text `
@@ -73,6 +76,3 @@ export const TitleSectionOverViewToday = styled.Text `
     margin-top: 32px;
     margin-bottom: 20px;
 `;
-
-//Toogle
-

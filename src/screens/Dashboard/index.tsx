@@ -9,11 +9,6 @@ import * as S from './styles';
 
 export function Dashboard(){
     const theme = useTheme();
-    const { toggleTheme } = useThemeAplication();
-    
-    function handleTheme(){
-        toggleTheme();
-    }
 
     const [dataPrimaryCard, setDataPrimaryCard] = useState([
         {id: 1, userName: '@nathanf', icon: IconFacebook, qtdFollowers: '1987', qtdFollowersToday: 12, type: 'facebook', decreaseViews: false},
@@ -42,9 +37,7 @@ export function Dashboard(){
                     </S.SectionPrimary>
                     <S.SectionScondary>
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
-                        <Toogle 
-                            onPress={handleTheme}
-                        />
+                        <Toogle/>
                     </S.SectionScondary>
                 </S.Header>
 

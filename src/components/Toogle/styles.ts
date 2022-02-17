@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { RectButton } from 'react-native-gesture-handler';
+import { Animated } from 'react-native'
+
+interface Props {
+  themeType: string;
+}
 
 export const Toogle = styled.TouchableOpacity `
     width: 50px;
@@ -18,11 +22,10 @@ export const ToogleBackgroundGradient = styled(LinearGradient)`
 `;
 
 
-export const TogleCircle = styled.View`
+export const TogleCircle = styled(Animated.View)<Props>`
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background-color: ${({theme}) => theme.colors.toggle};
-  align-self: flex-end;
+  background-color: ${({theme}) => theme.colors.background};
 `;
 

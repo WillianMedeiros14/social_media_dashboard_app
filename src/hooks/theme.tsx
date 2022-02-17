@@ -11,8 +11,10 @@ import dark from '../global/themes/dark';
 import ligth from '../global/themes/ligth';
   
 interface ThemeAplicationContextData {
-    toggleTheme: () => void;
+    // toggleTheme: () => void;
     getTheme: () => void;
+    themeAplication: string;
+    setThemeAplication: (item: string) => void;
 }
   
 const ThemeAplicationContext = createContext<ThemeAplicationContextData>({} as ThemeAplicationContextData);
@@ -31,24 +33,26 @@ export const ThemeAplicationProvider: React.FC = ({ children }) => {
       localTheme && setThemeAplication(jsonValue);
     }
     
-    const toggleTheme = async () => {
-        if (themeAplication === "light") {
-          await AsyncStorage.setItem('@_app_theme', "dark");
-          setThemeAplication("dark");
-        } else {
-          await AsyncStorage.setItem('@_app_theme', "light");
-          setThemeAplication("light");
-        }
-    };
+    // const toggleTheme = async () => {
+    //     if (themeAplication === "light") {
+    //       await AsyncStorage.setItem('@_app_theme', "dark");
+    //       setThemeAplication("dark");
+    //     } else {
+    //       await AsyncStorage.setItem('@_app_theme', "light");
+    //       setThemeAplication("light");
+    //     }
+    // };
   
     return (
       <ThemeAplicationContext.Provider
         value={{
-            toggleTheme,
-            getTheme
+            // toggleTheme,
+            getTheme,
+            themeAplication,
+            setThemeAplication
         }}
       >
-        <ThemeProvider theme={themeAplication === "dark" || themeAplication === null ? dark : ligth}>
+        <ThemeProvider theme={themeAplication === "dark" ? dark : ligth}>
           {children}
         </ThemeProvider>
       </ThemeAplicationContext.Provider>
