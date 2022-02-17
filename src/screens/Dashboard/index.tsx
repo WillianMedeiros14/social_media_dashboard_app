@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTheme } from "styled-components";
 
 import { IconFacebook, Iconinstagram, IconTwitter, IconYoutube } from "../../assets/icons";
 import { CardSectionPrimary, CardOverviewToday, Toogle } from "../../components";
@@ -8,7 +7,7 @@ import { useThemeAplication } from "../../hooks/theme";
 import * as S from './styles';
 
 export function Dashboard(){
-    const theme = useTheme();
+    const { themeAplication } = useThemeAplication();
 
     const [dataPrimaryCard, setDataPrimaryCard] = useState([
         {id: 1, userName: '@nathanf', icon: IconFacebook, qtdFollowers: '1987', qtdFollowersToday: 12, type: 'facebook', decreaseViews: false},
@@ -37,7 +36,9 @@ export function Dashboard(){
                     </S.SectionPrimary>
                     <S.SectionScondary>
                         <S.TextDarkMode>Dark Mode</S.TextDarkMode>
-                        <Toogle/>
+                        <Toogle
+                            typeTheme={themeAplication}
+                        />
                     </S.SectionScondary>
                 </S.Header>
 

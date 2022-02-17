@@ -7,42 +7,60 @@ import { useThemeAplication } from '../../hooks/theme';
 
 import * as S from './styles';
 
-export function Toogle(){
+interface Props {
+    typeTheme: string;
+}
+
+export function Toogle({typeTheme}:Props){
     const theme = useTheme();
 
-    const {themeAplication, setThemeAplication } = useThemeAplication();
-    const [themeAplicationHandle, setThemeAplicationHandle] = useState(themeAplication);
+    const { setThemeAplication } = useThemeAplication();
+    const [themeAplicationHandle, setThemeAplicationHandle] = useState(typeTheme);
 
     const animation = useRef(new Animated.Value(0)).current;
 
     useEffect(() => {
-        Animated.timing(animation, {
-            toValue: themeAplicationHandle === 'light' ? 23 : 0, 
-            duration: 500,
-            useNativeDriver: false,
-        }).start();
-    },[]);
+        if(typeTheme === "dark"){
+            Animated.timing(animation, {
+                toValue: 23, 
+                duration: 1000,
+                useNativeDriver: false,
+            }).start();
+        }else{
+            Animated.timing(animation, {
+                toValue: 0, 
+                duration: 1000,
+                useNativeDriver: false,
+            }).start();
+        }
+    }, [typeTheme]);
 
     async function handleChangeTheme(){
-        if (themeAplicationHandle === "light") {
-            setThemeAplication("dark");
+        if (typeTheme === "light") {
             setThemeAplicationHandle("dark");
-          await AsyncStorage.setItem('@_app_theme', "dark");
+            setThemeAplication("dark");
+            Animated.timing(animation, {
+                toValue: 23, 
+                duration: 1000,
+                useNativeDriver: false,
+            }).start();
+            await AsyncStorage.setItem("@_app_theme", "dark");
         } else {
-            setThemeAplication("light");
             setThemeAplicationHandle("light");
-            await AsyncStorage.setItem('@_app_theme', "light");
+            setThemeAplication("light");
+            Animated.timing(animation, {
+                toValue: 0, 
+                duration: 1000,
+                useNativeDriver: false,
+            }).start();
+            await AsyncStorage.setItem("@_app_theme", "light");
         }
-        Animated.timing(animation, {
-            toValue: themeAplicationHandle === 'light' ? 23 : 0, 
-            duration: 1000,
-            useNativeDriver: false,
-        }).start();
     }
     
     return(
         <S.Toogle onPress={handleChangeTheme} 
             activeOpacity={0.5}
+            hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}
         >
             <S.ToogleBackgroundGradient
                 start={{x:0,y:1}}
